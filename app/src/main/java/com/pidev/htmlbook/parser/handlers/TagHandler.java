@@ -20,11 +20,11 @@ public abstract class TagHandler {
         this.context = context;
     }
 
-    public static String getSelector() {
+    public String getSelector() {
         return selector;
     }
 
-    public static int getOrder() {
+    public int getOrder() {
         return order;
     }
 
