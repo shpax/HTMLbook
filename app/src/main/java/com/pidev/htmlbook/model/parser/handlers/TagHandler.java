@@ -1,4 +1,4 @@
-package com.pidev.htmlbook.parser.handlers;
+package com.pidev.htmlbook.model.parser.handlers;
 
 import android.content.Context;
 import android.view.View;

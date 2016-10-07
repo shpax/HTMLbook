@@ -1,13 +1,12 @@
-package com.pidev.htmlbook.parser.handlers;
+package com.pidev.htmlbook.model.parser.handlers;
 
 import android.content.Context;
 import android.text.Html;
 import android.view.View;
 import android.widget.TextView;
 
-import com.pidev.htmlbook.parser.HtmlParser;
+import com.pidev.htmlbook.model.parser.HtmlParser;
 
-import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
@@ -22,7 +21,7 @@ public class ParagraphHandler extends TagHandler {
     private static String selector = "p";
     private static int order = 50;
 
-    {
+    static {
         HtmlParser.registerHandler(ParagraphHandler.class);
     }
 
