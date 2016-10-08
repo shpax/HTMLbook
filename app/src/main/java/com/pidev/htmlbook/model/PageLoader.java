@@ -1,16 +1,11 @@
 package com.pidev.htmlbook.model;
 
-import android.content.Context;
-
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.pidev.htmlbook.model.parser.OnPageHtmlLoadedListener;
+import com.pidev.htmlbook.model.parser.listeners.OnPageHtmlLoadedListener;
 
 import cz.msebera.android.httpclient.Header;
 
-/**
- * Created by max on 05.10.16.
- */
 public class PageLoader {
 
     private static AsyncHttpClient client = new AsyncHttpClient();
