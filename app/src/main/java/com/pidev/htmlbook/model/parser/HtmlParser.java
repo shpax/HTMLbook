@@ -1,54 +1,41 @@
 package com.pidev.htmlbook.model.parser;
 
 
-import android.content.Context;
-import android.view.View;
-
-import com.pidev.htmlbook.model.parser.interfaces.TagHandler;
+import com.pidev.htmlbook.model.parser.builders.ViewBuilder;
 import com.pidev.htmlbook.model.parser.interfaces.Parser;
+import com.pidev.htmlbook.model.parser.interfaces.TagChecker;
 
 import org.jsoup.nodes.Element;
 
 import java.util.ArrayList;
 
-public class HtmlParser implements Parser{
+/**
+ * class HtmlParser is a representation of Parser interface
+ */
 
-    private static ArrayList<Class<TagHandler>> handlerClasses;
-    private ArrayList<TagHandler> handlers;
-    private Context context;
+public class HtmlParser implements Parser {
 
-    public HtmlParser(Context context) {
-        this.context = context;
+    private static ArrayList<TagChecker> tagCheckers;
+    public HtmlParser() {}
 
-        this.handlers = new ArrayList<>();
-        for (Class<TagHandler> handlerClass : handlerClasses) {
-            try {
-                this.handlers.add(handlerClass.newInstance());
-            } catch (Exception e) {
-                e.printStackTrace();
+    public static void addTagChecker(TagChecker tagChecker) {
+        for (int i = 0; i < tagCheckers.size(); i++) {
+            if (tagCheckers.get(i).getOrder() < tagChecker.getOrder()) {
+                tagCheckers.add(i, tagChecker);
+                return;
             }
         }
-    }
 
-    public static void registerHandler(Class c) {
-        if (handlerClasses.size() != 0) {
-            for (int i=0; i < handlerClasses.size(); i++) try {
-                int currentClassOrder = (int) handlerClasses.get(i).getMethod("getOrder").invoke(null);
-                int newClassOrder = (int) c.getMethod("getOrder").invoke(null);
-                if (currentClassOrder < newClassOrder) {
-                    handlerClasses.add(c);
-                    break;
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        } else {
-            handlerClasses.add(c);
-        }
+        tagCheckers.add(tagChecker);
     }
 
     @Override
-    public View makeView(Element element) {
+    public ViewBuilder getBuilder(Element element) {
+        for (TagChecker checker : tagCheckers) {
+            if (checker.isApplicable(element)) {
+                return checker.getBuilder(element);
+            }
+        }
         return null;
     }
 }

@@ -5,10 +5,14 @@ import com.pidev.htmlbook.model.parser.builders.ViewBuilder;
 import org.jsoup.nodes.Element;
 
 /**
- * interface Parser is a base interface for handling TagCheckers and ViewBuilders
+ * interface TagChecker handles element check and proper ViewBuilder creation
  */
 
-public interface Parser {
+public interface TagChecker {
+
+    int getOrder();
+
+    boolean isApplicable(Element element);
 
     ViewBuilder getBuilder(Element element);
 
