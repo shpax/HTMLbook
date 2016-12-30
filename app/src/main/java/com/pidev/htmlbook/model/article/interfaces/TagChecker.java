@@ -1,6 +1,6 @@
-package com.pidev.htmlbook.model.parser.interfaces;
+package com.pidev.htmlbook.model.article.interfaces;
 
-import com.pidev.htmlbook.model.parser.builders.ViewBuilder;
+import com.pidev.htmlbook.model.article.builder.ViewBuilder;
 
 import org.jsoup.nodes.Element;
 

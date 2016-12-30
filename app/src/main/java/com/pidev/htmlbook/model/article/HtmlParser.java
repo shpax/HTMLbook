@@ -1,9 +1,9 @@
-package com.pidev.htmlbook.model.parser;
+package com.pidev.htmlbook.model.article;
 
 
-import com.pidev.htmlbook.model.parser.builders.ViewBuilder;
-import com.pidev.htmlbook.model.parser.interfaces.Parser;
-import com.pidev.htmlbook.model.parser.interfaces.TagChecker;
+import com.pidev.htmlbook.model.article.builder.ViewBuilder;
+import com.pidev.htmlbook.model.article.interfaces.Parser;
+import com.pidev.htmlbook.model.article.interfaces.TagChecker;
 
 import org.jsoup.nodes.Element;
 

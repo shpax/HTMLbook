@@ -1,4 +1,4 @@
-package com.pidev.htmlbook.model.parser.builders;
+package com.pidev.htmlbook.model.article.builder;
 
 import android.view.LayoutInflater;
 import android.view.View;

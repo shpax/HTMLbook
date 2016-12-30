@@ -10,8 +10,8 @@ import android.view.ViewGroup;
 
 import com.pidev.htmlbook.R;
 import com.pidev.htmlbook.model.PageLoader;
-import com.pidev.htmlbook.model.parser.HtmlParser;
-import com.pidev.htmlbook.model.parser.listeners.OnPageHtmlLoadedListener;
+import com.pidev.htmlbook.model.article.HtmlParser;
+import com.pidev.htmlbook.model.article.listeners.OnPageHtmlLoadedListener;
 
 /**
  * A simple {@link Fragment} subclass.

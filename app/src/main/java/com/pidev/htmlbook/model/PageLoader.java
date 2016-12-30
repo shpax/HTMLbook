@@ -2,7 +2,7 @@ package com.pidev.htmlbook.model;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
-import com.pidev.htmlbook.model.parser.listeners.OnPageHtmlLoadedListener;
+import com.pidev.htmlbook.model.article.listeners.OnPageHtmlLoadedListener;
 
 import cz.msebera.android.httpclient.Header;
 
